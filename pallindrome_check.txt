@@ -1,5 +1,5 @@
-#include<stdio.h>
 		3. 	Check string is palindrome or not
+#include<stdio.h>
 #include<string.h>
 #include<conio.h>
 int main()
