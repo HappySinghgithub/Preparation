@@ -1,4 +1,4 @@
-                6. Reverse string word by word
+		6.	Reverse string word by word
 #include<stdio.h>
 #include<conio.h>
 #include<string.h>
