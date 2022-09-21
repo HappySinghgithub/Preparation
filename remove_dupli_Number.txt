@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+    char a[50];
+    int i,j,k;
+    printf("Enter the string: ");
+    gets(a);
+    for(i=0;i<strlen(a);i++)
+    {
+        for(j=i+1;j<strlen(a);)
+        {
+            if(a[i]==a[j])
+            {
+                for(k=j;k<strlen(a);k++)
+                {
+                    a[k]=a[k+1];
+                }
+            }
+            else
+            {
+                j++;
+            }
+        }
+    }
+    printf("AFTER DUPLICACY REMOVE: %s",a);
+}
