@@ -1,0 +1,21 @@
+		4.	Count Vowel in a string
+#include<stdio.h>
+#include<string.h>
+void main()
+{
+    char a[50];
+    int i,count=0;
+    printf("Enter the string: ");
+    gets(a);
+    printf("Vowel in a string are: ");
+    for(i=0;i<strlen(a);i++)
+    {
+        a[i]=tolower(a[i]);
+        if(a[i]=='a'||a[i]=='e'||a[i]=='i'||a[i]=='o'||a[i]=='u')
+        {
+            count++;
+            printf("%c",a[i]);
+        }
+    }
+    printf("\nNumber of vowel in a string are: %d",count);
+}
