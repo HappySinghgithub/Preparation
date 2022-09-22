@@ -1,0 +1,21 @@
+5. 	Remove space from the string
+#include<stdio.h>
+#include<string.h>
+void main()
+{
+    char a[50];
+    int i,j;
+    printf("Enter the string: ");
+    gets(a);
+    for(i=0;i<strlen(a);i++)
+    {
+        if(a[i]==' ')
+        {
+            for(j=i;j<strlen(a)-1;j++)
+            {
+                a[j]=a[j+1];
+            }
+        }
+    }
+    puts(a);
+}
