@@ -1,0 +1,44 @@
+#include<stdio.h>
+#include<conio.h>
+void binarySearch(int a[],int,int);
+void main()
+{
+    int a[50];
+    int n,item,size,i;
+    printf("Enter the item to find: ");
+    scanf("%d",&item);
+    printf("Enter the size of array: ");
+    scanf("%d",&size);
+    printf("Enter the element: ");
+    for(i=0;i<size;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    binarySearch(a,item,size);
+}
+void binarySearch(int a[],int item,int size)
+{
+    int lower = 0,upper=size-1,mid;
+    while(lower<=upper)
+    {
+        mid = (lower+upper)/2;
+        if(item==a[mid])
+        {
+            printf("Element found at index %d",mid);
+            return;
+        }
+        else if(item<a[mid])
+        {
+            upper = mid-1;
+        }
+        else
+        {
+            lower = mid+1;
+        }
+    }
+    printf("Element not found");
+}
+
+TIME COMPLEXITY:
+    Best Case - O(1)
+    Worst Case - O(log n)
