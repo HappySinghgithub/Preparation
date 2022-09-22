@@ -24,3 +24,11 @@ void main()
         printf("Element not found");
     }
 }
+
+/*
+                      Time Complexity
+    Best Case:-	O(1)
+    Average Case:-	O(n)
+    Worst Case:-	O(n)
+
+*/
