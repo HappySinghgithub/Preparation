@@ -1,0 +1,75 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define n 5
+void push();
+void pop();
+void display();
+int top = -1,stack[n],choice;
+void main()
+{
+ //   int choice;
+    while(1)
+    {
+        printf("\n1. Insert");
+        printf("\n 2. Delete");
+        printf("\n 3. Display");
+        printf("\n 4. Exit");
+        printf("\nEnter you choice: ");
+        scanf("%d",&choice);
+        switch(choice)
+        {
+            case 1: push();
+                break;
+            case 2: pop();
+                break;
+            case 3: display();
+                break;
+            case 4: exit(0);
+            default:
+                printf("\nInvalid choice");
+                break;
+        }
+    }
+}
+void push()
+{
+    if(top==n-1)
+    {
+        printf("\nOverflow Condition");
+    }
+    else
+    {
+        printf("\nEnter data: ");
+        top++;
+        scanf("%d",&stack[top]);
+    }
+}
+void pop()
+{
+    if(top==-1)
+    {
+        printf("\nUnderflow Condition");
+    }
+    else
+    {
+        printf("\nData successfully Delete");
+        top--;
+        printf("%d",stack[top]);
+    }
+}
+void display()
+{
+    if(top==-1)
+    {
+        printf("\nStack is Empty");
+    }
+    else
+    {   
+        printf("\nData displayed:\t");
+        int i;
+        for(i=0;i<=top;i++)
+        {
+            printf("%d ",stack[i]);
+        }
+    }
+}
