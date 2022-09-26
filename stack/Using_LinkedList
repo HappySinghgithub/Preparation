@@ -1,0 +1,104 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct node
+{
+    int data;
+    struct node *next;
+};
+struct node *top = 0;
+void push();
+void pop();
+void peek();
+void display();
+
+void main()
+{
+    int choice,x;
+    while(1)
+    {
+        printf("\n1. Insert Data");
+        printf("\n2. Delete Data");
+        printf("\n3. Display peek data");
+        printf("\n4.Display data");
+        printf("\n5. Exit Data");
+        printf("\nEnter your choice: ");
+        scanf("%d",&choice);
+        switch(choice)
+        {
+            case 1: 
+                printf("Enter the value: ");
+                scanf("%d",&x);
+                push(x);
+                break;
+            case 2: pop();
+                break;
+            case 3: peek();
+                break;
+            case 4: display();
+                break;
+            case 5: exit(0);
+            default:
+                printf("\nInvalid choice");
+        }
+    }
+}
+void push(int x)
+{
+    struct node *newnode;
+    newnode = (struct node *)malloc(sizeof(struct node));
+    newnode->data = x;
+
+    if(top == 0)
+    {
+        newnode->next = 0;
+    }
+    else
+    {
+        newnode->next = top;
+    }
+    top = newnode;
+    printf("\nValue inserted");
+}
+void pop()
+{
+    struct node *temp;
+    temp = top;
+    if(top == 0)
+    {
+        printf("\nStack is in underflow");
+    }
+    else
+    {
+        printf("Pop element is %d",top->data);
+        top = top->next;
+        free(top);
+    }
+}
+void peek()
+{
+    if(top==0)
+    {
+        printf("\nStack is empty");
+    }
+    else
+    {
+        printf("\nTop of the element is %d",top->data);        
+    }
+}
+void display()
+{
+    struct node *temp;
+    temp = top;
+    if(top == 0)
+    {
+        printf("\nList is empty");
+    }
+    else
+    {
+        while(temp!=0)
+        {
+            printf("%d ",temp->data);
+            temp = temp->next;
+        }
+    }
+}
