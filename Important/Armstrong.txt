@@ -1,3 +1,4 @@
+                    // Armstrong number By Naresh I Technologies
 #include<stdio.h>
 #include<conio.h>
 void main()
